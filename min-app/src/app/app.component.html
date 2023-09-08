@@ -1,0 +1,31 @@
+<head>
+  <title>{{ pageTitle }}</title>
+</head>
+
+<div class="app-component">
+  <header class="app-header">
+    <nav class="nav-bar">
+      <!-- Menú público -->
+      <app-menu-public *ngIf="!getAuthService().isLogged()"> </app-menu-public>
+      <app-header-public
+        *ngIf="!getAuthService().isLogged()"
+      ></app-header-public>
+
+      <!-- Menú privado -->
+      <app-menu-private *ngIf="getAuthService().isLogged()"> </app-menu-private>
+      <app-header-private
+        *ngIf="getAuthService().isLogged()"
+      ></app-header-private>
+    </nav>
+  </header>
+
+  <mat-divider></mat-divider>
+
+  <main class="app-main">
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer>
+    <app-footer></app-footer>
+  </footer>
+</div>

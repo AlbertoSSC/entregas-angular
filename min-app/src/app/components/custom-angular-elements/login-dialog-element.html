@@ -1,0 +1,15 @@
+<div>
+  <h1 mat-dialog-title>Verificando identidad</h1>
+
+  <div mat-dialog-content *ngIf="(loading$ | async)">Un momento por favor</div>
+  <div mat-dialog-content *ngIf="!(loading$ | async)">
+    Error en el inicio de sesión. <br />
+    Revisa el nombre de usuario y la contraseña e inténtalo de nuevo
+  </div>
+
+  <button *ngIf="!(loading$ | async)" mat-button mat-dialog-close>
+    Cerrar
+  </button>
+
+  <mat-spinner *ngIf="(loading$ | async)" [diameter]="50"></mat-spinner>
+</div>

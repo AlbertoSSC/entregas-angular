@@ -1,0 +1,38 @@
+<form (ngSubmit)="onSubmit()" #loginForm="ngForm" class="form-container">
+  <p>master@lemoncode.net</p>
+  <mat-form-field color="accent">
+    <mat-label>Usuario</mat-label>
+    <input
+      name="username"
+      matInput
+      placeholder="Introduzca su usuario"
+      required
+      [(ngModel)]="formData.username"
+    />
+  </mat-form-field>
+
+  <p>123456</p>
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input
+      name="password"
+      type="password"
+      matInput
+      placeholder="Introduzca su contraseña"
+      required
+      [(ngModel)]="formData.password"
+    />
+  </mat-form-field>
+
+  <!-- <mat-spinner *ngIf="loading" color="warn" diameter="40">
+  </mat-spinner> -->
+
+  <button
+    mat-button
+    type="submit"
+    (click)="openDialog()"
+    [disabled]="loginForm.invalid"
+  >
+    Login
+  </button>
+</form>

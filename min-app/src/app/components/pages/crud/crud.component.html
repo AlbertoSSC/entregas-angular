@@ -1,0 +1,7 @@
+<h1>CRUD</h1>
+<div class="CRUD-container">
+  <div *ngFor="let rickMorty of rickAndMortyList" class="list-CRUD">
+    <img width="40px" [src]="rickMorty.image" alt="avatar" />
+    <span>{{ rickMorty.name }}</span>
+  </div>
+</div>

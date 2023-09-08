@@ -1,0 +1,16 @@
+.corp-public-header {
+  display: flex;
+  align-items: center;
+
+  & img {
+    height: 50px;
+    margin-bottom: 10px;
+  }
+
+  & span {
+    color: grey;
+    font-weight: 500;
+    font-size: medium;
+    margin-bottom: 3px;
+  }
+}

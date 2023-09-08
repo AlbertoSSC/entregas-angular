@@ -1,0 +1,26 @@
+.footer-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 0.3rem;
+
+  background-color: rgb(255, 69, 0, 0.7);
+  background-image: url("../../../../assets/ASSC_Hor_Grey.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: soft-light;
+
+  & span {
+    display: flex;
+
+    border-radius: 0.2rem;
+    background-color: rgb(255, 255, 255, 0.2);
+
+    width: fit-content;
+    padding: 0 0.5rem;
+  }
+}

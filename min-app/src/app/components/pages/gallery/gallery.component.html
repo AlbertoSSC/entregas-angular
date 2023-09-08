@@ -1,0 +1,88 @@
+<div class="slideShow-container">
+  <div class="slideShow-button-container">
+    <div class="packOfTwo-button-container">
+      <button
+        mat-stroked-button
+        (click)="prevImage()"
+        [disabled]="this.currentIndex <= 0"
+      >
+        Anterior
+      </button>
+      <button
+        mat-stroked-button
+        (click)="nextImage()"
+        [disabled]="this.currentIndex >= this.imagesList.length - 1"
+      >
+        Siguiente
+      </button>
+    </div>
+    <div class="packOfTwo-button-container">
+      <button mat-stroked-button (click)="increaseImage()">Aumentar</button>
+      <button mat-stroked-button (click)="decreaseImage()">Disminuir</button>
+    </div>
+    <div class="packOfTwo-button-container">
+      <button
+        mat-stroked-button
+        color="primary"
+        (click)="playSlideShow()"
+        [disabled]="playDisabled"
+      >
+        ▶️ Play
+      </button>
+      <button
+        mat-stroked-button
+        color="warn"
+        (click)="stopSlideShow()"
+        [disabled]="stopDisabled"
+      >
+        ⏹️ Stop
+      </button>
+    </div>
+  </div>
+
+  <p>{{ selectedImage.title }}</p>
+
+  <div
+    class="selected-image-container"
+    [style.width.px]="imageWidth"
+    [style.height.px]="imageHeight"
+  >
+    <img
+      [rotate]="45"
+      [step]="15"
+      [src]="selectedImage.src"
+      [alt]="selectedImage.title"
+      class="selected-image"
+    />
+  </div>
+
+  <div class="image-list">
+    <button
+      mat-stroked-button
+      (click)="previousPage()"
+      [disabled]="currentPage === 0"
+    >
+      Anterior
+    </button>
+
+    <div
+      *ngFor="
+        let image of imagesList
+          | slice
+            : currentPage * imagesPerPage
+            : (currentPage + 1) * imagesPerPage
+      "
+      class="image-item {{ emphasizeSelectedImage(image) }}"
+    >
+      <img [src]="image.src" [alt]="image.title" (click)="selectImage(image)" />
+    </div>
+
+    <button
+      mat-stroked-button
+      (click)="nextPage()"
+      [disabled]="currentPage === totalPages() - 1"
+    >
+      Siguiente
+    </button>
+  </div>
+</div>
