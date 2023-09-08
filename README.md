@@ -1,3 +1,3 @@
 # entregas-angular
 
-Obligatorio + Galería de imágenes + RxJS
+# Obligatorio + Galería de imágenes + RxJS
