@@ -1,6 +1,6 @@
 <form (ngSubmit)="onSubmit()" #loginForm="ngForm" class="form-container">
   <p>master@lemoncode.net</p>
-  <mat-form-field color="accent">
+  <mat-form-field>
     <mat-label>Usuario</mat-label>
     <input
       name="username"
@@ -23,9 +23,6 @@
       [(ngModel)]="formData.password"
     />
   </mat-form-field>
-
-  <!-- <mat-spinner *ngIf="loading" color="warn" diameter="40">
-  </mat-spinner> -->
 
   <button
     mat-button
